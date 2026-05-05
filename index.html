@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>材質辨識系統</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>材質辨識系統</h1>
+      <p>使用前端技術與攝像頭進行即時辨識，模型資料放在 <code>models/</code> 資料夾。</p>
+    </header>
+
+    <main>
+      <div class="video-panel">
+        <video id="webcam" autoplay playsinline muted></video>
+        <div class="status" id="status">載入中...</div>
+      </div>
+
+      <div class="controls">
+        <button id="startButton">啟動攝影機</button>
+        <button id="stopButton" disabled>停止攝影機</button>
+      </div>
+
+      <section class="results">
+        <h2>辨識結果</h2>
+        <div id="predictionList" class="prediction-list"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>模型標籤: plastic, papper, metal, cardboard, cloths</p>
+    </footer>
+  </div>
+
+  <script src="libs/tf.min.js"></script>
+  <script src="libs/teachablemachine-image.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
